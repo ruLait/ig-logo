@@ -3,6 +3,12 @@
 	<meta charset="utf-8">
 	<title>Instagram</title>
 	<script type="text/javascript">
-		window.location.replace("intent://instagram.com/_n/mainfeed/#Intent;package=com.instagram.android;scheme=https;end");
+		var uiWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Version)/i.test(navigator.userAgent);
+
+		if (uiWebView == true) {
+			window.location.replace("instagram://");
+		} else {
+			window.location.replace("intent://instagram.com/_n/mainfeed/#Intent;package=com.instagram.android;scheme=https;end");
+		}
 	</script>
 </head><body></body></html>
